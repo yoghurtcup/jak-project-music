@@ -1651,20 +1651,6 @@
 ;; the DGO file
 (custom-level-cgo "TZ3.DGO" "test-zone3/testzone3.gd")
 
-;; TFL note: TFL level build files:
-
-;; Crystal cave level :
-(build-custom-level "crystal-cave")
-(custom-level-cgo "CRC.DGO" "crystal-cave/crystalc.gd")
-
-;; Crescent Top level :
-(build-custom-level "crescent-top")
-(custom-level-cgo "CST.DGO" "crescent-top/crescent.gd")
-
-;; Energy Bay level :
-(build-custom-level "energy-bay")
-(custom-level-cgo "ENB.DGO" "energy-bay/energybay.gd")
-
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;
@@ -2118,29 +2104,6 @@
  "mods/mod-common-functions.gc"
  "mods/mod-custom-code.gc"
 )
-
-;; TFL note: Custom part and obs file for the levels
-
-(goal-src-sequence
- "levels/crystalc/"
- :deps ("$OUT/obj/ticky.o")
- "crystalc-obs.gc"
- "crystalc-part.gc"
- )
-
-(goal-src-sequence
- "levels/crescent/"
- :deps ("$OUT/obj/ticky.o")
- "crescent-obs.gc"
- "crescent-part.gc"
- )
-
-(goal-src-sequence
- "levels/energybay/"
- :deps ("$OUT/obj/ticky.o")
- "energybay-obs.gc"
- "energybay-part.gc"
- )
 
 (group-list "all-code"
   `(,@(reverse *all-gc*))

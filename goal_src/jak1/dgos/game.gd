@@ -202,6 +202,7 @@
   "speedruns.o" ;; added
   "pckernel-common.o" ;; added
   "pckernel.o" ;; added
+  "input-display.o" ;;added
   "mood-tables.o"
   "mood.o"
   "weather-part.o"
@@ -245,6 +246,8 @@
   "target-util.o"
   "target-part.o"
   "collide-reaction-target.o"
+  ;; TFL note: added
+  "tfl-music-player.o"
   "logic-target.o"
   "sidekick.o"
   "voicebox.o"
@@ -344,5 +347,29 @@
   "plat-eco.o"
   "ropebridge.o"
   "ticky.o"
+  "mod-settings.o" ;; added
+  "mod-common-functions.o" ;; added
+  "mod-custom-code.o" ;; added
+  ;; keep zoomer stuff loaded
+  "target-racer-h.o"
+  "racer-part.o"
+  ;; TFL note: moved
   "hud-classes-pc.o" ;; added
+  "racer.o"
+  "target-racer.o"
+  "racer-states.o"
+  "collide-reaction-racer.o"
+  "racer-ag.go"
+  "eichar-racer+0-ag.go"
+  "tpage-1119.go"
+  ;; keep flutflut stuff loaded
+  "flut-part.o"
+  "flutflut.o"
+  "target-flut.o"
+  "flut-saddle-ag.go"
+  "eichar-flut+0-ag.go"
+  ;; TFL note: added
+  "super-eco-crystal.o"
+  "tfl-hint-data.o"
+  "tfl-hint.o"
  ))

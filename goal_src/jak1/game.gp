@@ -489,6 +489,11 @@
    "flut_common/flut-part.gc"
    "flut_common/flutflut.gc"
    "flut_common/target-flut.gc"
+
+   ;; TFL note: added
+   "tfl_common/super-eco-crystal.gc"
+   "tfl_common/tfl-hint-data.gc"
+   "tfl_common/tfl-hint.gc"
    )
 
 
@@ -1642,6 +1647,24 @@
 ;; the DGO file
 (custom-level-cgo "TSZ.DGO" "test-zone/testzone.gd")
 
+(build-custom-level "test-zone3")
+;; the DGO file
+(custom-level-cgo "TZ3.DGO" "test-zone3/testzone3.gd")
+
+;; TFL note: TFL level build files:
+
+;; Crystal cave level :
+(build-custom-level "crystal-cave")
+(custom-level-cgo "CRC.DGO" "crystal-cave/crystalc.gd")
+
+;; Crescent Top level :
+(build-custom-level "crescent-top")
+(custom-level-cgo "CST.DGO" "crescent-top/crescent.gd")
+
+;; Energy Bay level :
+(build-custom-level "energy-bay")
+(custom-level-cgo "ENB.DGO" "energy-bay/energybay.gd")
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Game Engine Code
 ;;;;;;;;;;;;;;;;;;;;;
@@ -1932,12 +1955,16 @@
 
 (goal-src "engine/common-obs/generic-obs.gc" "pc-anim-util" "assert")
 
+;; TFL note: added
+(goal-src "levels/tfl_common/tfl-music-player.gc" "level")
+
 (goal-src-sequence
  ;; prefix
  "engine/"
 
  :deps
- ("$OUT/obj/generic-obs.o")
+ ;; TFL note: added music player dep
+ ("$OUT/obj/generic-obs.o" "$OUT/obj/tfl-music-player.o")
  "target/target-util.gc"
  "target/target-part.gc"
  "target/collide-reaction-target.gc"
@@ -1958,7 +1985,8 @@
  "gfx/hw/video.gc"
  )
 
-(goal-src "engine/game/main.gc" "pckernel" "video")
+;; TFL note: added dep
+(goal-src "engine/game/main.gc" "pckernel" "video" "tfl-music-player")
 
 (goal-src-sequence
  ;; prefix
@@ -2079,6 +2107,40 @@
 (goal-src "pc/debug/default-menu-pc.gc" "anim-tester-x" "part-tester" "entity-debug")
 (goal-src "pc/debug/pc-debug-common.gc" "pckernel-impl" "entity-h" "game-info-h" "level-h" "settings-h" "gsound-h" "target-util")
 (goal-src "pc/debug/pc-debug-methods.gc" "pc-debug-common")
+(goal-src "engine/mods/input-display.gc")
+
+
+(goal-src-sequence
+ ;; prefix
+ "engine/"
+ :deps ("$OUT/obj/battlecontroller.o" "$OUT/obj/snow-bunny.o" "$OUT/obj/baby-spider.o" "$OUT/obj/sage-village3.o" "$OUT/obj/sage-finalboss.o" "$OUT/obj/assistant-citadel.o" "$OUT/obj/assistant-lavatube.o" "$OUT/obj/robocave-part.o" "$OUT/obj/driller-lurker.o" "$OUT/obj/training-part.o" "$OUT/obj/rolling-race-ring.o" "$OUT/obj/beach-part.o" "$OUT/obj/sculptor.o" "$OUT/obj/sunken-fish.o" "$OUT/obj/billy.o" "$OUT/obj/sidekick-human.o" "$OUT/obj/flying-lurker.o" "$OUT/obj/target-racer-h.o" "$OUT/obj/firecanyon-obs.o" "$OUT/obj/target-flut.o" "$OUT/obj/hud-classes-pc.o" "$OUT/obj/collide-reaction-racer.o" "$OUT/obj/plant-boss.o" "$OUT/obj/beach-obs.o" "$OUT/obj/sunken-elevator.o" "$OUT/obj/jungle-part.o" "$OUT/obj/sequence-a-village1.o" "$OUT/obj/ticky.o")
+ "mods/mod-settings.gc"
+ "mods/mod-common-functions.gc"
+ "mods/mod-custom-code.gc"
+)
+
+;; TFL note: Custom part and obs file for the levels
+
+(goal-src-sequence
+ "levels/crystalc/"
+ :deps ("$OUT/obj/ticky.o")
+ "crystalc-obs.gc"
+ "crystalc-part.gc"
+ )
+
+(goal-src-sequence
+ "levels/crescent/"
+ :deps ("$OUT/obj/ticky.o")
+ "crescent-obs.gc"
+ "crescent-part.gc"
+ )
+
+(goal-src-sequence
+ "levels/energybay/"
+ :deps ("$OUT/obj/ticky.o")
+ "energybay-obs.gc"
+ "energybay-part.gc"
+ )
 
 (group-list "all-code"
   `(,@(reverse *all-gc*))

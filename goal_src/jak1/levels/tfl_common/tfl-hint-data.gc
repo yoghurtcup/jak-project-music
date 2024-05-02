@@ -91,20 +91,6 @@ examples:
                               :force-playback? #t
                               )
                             (static-hint-data
-                              :file-name "crystalc-tfl-hint-05-daxSeeGondola.wav"
-                              :text-id (text-id crystalc-tfl-hint-05-daxSeeGondola)
-                              :task (game-task crystalc-gondola)
-                              :task-status (task-status need-hint)
-                              :force-playback? #t
-                              )
-                            (static-hint-data
-                              :file-name "crystalc-tfl-hint-06-daxUseGondola.wav"
-                              :text-id (text-id crystalc-tfl-hint-06-daxUseGondola)
-                              :task (game-task crystalc-gondola)
-                              :task-status (task-status invalid)
-                              :force-playback? #t
-                              )
-                            (static-hint-data
                               :file-name "crescent-tfl-hint-01-daxStart.wav"
                               :text-id (text-id crescent-tfl-hint-01-daxStart)
                               :force-playback? #t
@@ -149,46 +135,9 @@ examples:
                               :force-playback? #t
                               )
                             (static-hint-data
-                              :file-name "crescent-tfl-hint-09-KeiraZoomer.wav"
-                              :text-id (text-id crescent-tfl-hint-09-KeiraZoomer)
-                              :task (game-task energy-bay-turbine1)
-                              :task-status (task-status need-hint)
-                              :voicebox? #t
-                              :force-playback? #t
-                              )
-                            (static-hint-data
                               :file-name "crescent-tfl-hint-12-KeiraControl.wav"
                               :text-id (text-id crescent-tfl-hint-12-KeiraControl)
                               :voicebox? #t
-                              :force-playback? #t
-                              )
-                            (static-hint-data
-                              :file-name "crescent-tfl-hint-13-KeiraCable.wav"
-                              :text-id (text-id crescent-tfl-hint-13-KeiraCable)
-                              :task (game-task energy-bay-turbine1)
-                              :task-status (task-status need-hint)
-                              :voicebox? #t
-                              :force-playback? #t
-                              )
-                            (static-hint-data
-                              :file-name "energy-bay-tfl-hint-01-daxTurbine1.wav"
-                              :text-id (text-id energy-bay-tfl-hint-01-daxTurbine1)
-                              :task (game-task energy-bay-turbine1)
-                              :task-status (task-status invalid)
-                              :force-playback? #t
-                              )
-                            (static-hint-data
-                              :file-name "energy-bay-tfl-hint-02-daxClosed.wav"
-                              :text-id (text-id energy-bay-tfl-hint-02-daxClosed)
-                              :task (game-task energy-bay-turbine4)
-                              :task-status (task-status need-hint)
-                              :force-playback? #t
-                              )
-                            (static-hint-data
-                              :file-name "energy-bay-tfl-hint-03-daxTurbine4.wav"
-                              :text-id (text-id energy-bay-tfl-hint-03-daxTurbine4)
-                              :task (game-task energy-bay-turbine4)
-                              :task-status (task-status invalid)
                               :force-playback? #t
                               )
                             (static-hint-data
